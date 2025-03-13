@@ -1,0 +1,31 @@
+openapi: 3.0.1
+info:
+  title: Sample API
+  version: 1.0.0
+paths:
+  /greeting:
+    get:
+      summary: Returns a greeting message
+      operationId: getGreeting
+      tags:
+        - Greeting
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GreetingResponse"
+
+components:
+  schemas:
+    GreetingResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          nullable: false
+          example: "Hello from OpenAPI"
+
+
+
